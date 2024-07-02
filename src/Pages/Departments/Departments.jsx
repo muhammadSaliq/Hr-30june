@@ -51,7 +51,7 @@ const Department = () => {
 
 // single department function
     const fetchSingleDepartment = async(id) => {
-        const response = await axios.get(`http://localhost:8000/geteditdepaprtment/${id}`);
+        const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/geteditdepaprtment/${id}`);
         console.log("response: ", response);
       console.log(SingleDepartment);
       setSingleDepartment(response.data.Product);
@@ -143,7 +143,7 @@ const Department = () => {
       //disapprove department function
       const deleteData = async (id, name)=>{
         try {
-          const response = await axios.get(`http://localhost:8000/deletedepartment/${id}/${name}`)
+          const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/deletedepartment/${id}/${name}`)
           console.log("response: ", response.data);
         } catch (error) {
           console.log("error in deleting department", error);
@@ -157,7 +157,7 @@ const Department = () => {
       //approve department function
       const approveData = async (id, name)=>{
         try {
-          const response = await axios.get(`http://localhost:8000/activedepartment/${id}/${name}`)
+          const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/activedepartment/${id}/${name}`)
           console.log("response: ", response.data);
         } catch (error) {
           console.log("error in active department", error);
@@ -180,7 +180,7 @@ const Department = () => {
     //all dep function
       const getAlldepartments = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/alldepartments`);
+          const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/alldepartments`);
           console.log("response: ", response);
           console.log(alldepartmentss);
           setalldepartmentss(response.data.data);
@@ -196,7 +196,7 @@ const Department = () => {
           try {
             setLoading(true);
             
-            const response = await axios.post('http://localhost:8000/adddepartments', {
+            const response = await axios.post('https://hr-forcast-backend-main.vercel.app/adddepartments', {
                 departmentname,
                 contact,
                 departmentmanager,
@@ -238,7 +238,7 @@ const Department = () => {
 //edit department funcction
  const handleEdit = async (id , name) => {
         const UserData = { ...SingleDepartment};
-        const response = await axios.put(`http://localhost:8000/editdepartment/${id}/${name}/${olddepartmentname}`, UserData);
+        const response = await axios.put(`https://hr-forcast-backend-main.vercel.app/editdepartment/${id}/${name}/${olddepartmentname}`, UserData);
         seteditbool(true)
         handleOpenAlert('Department successfully Editted!');
         setOpenEditDialog(false);

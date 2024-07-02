@@ -109,7 +109,7 @@ const Editemployee = () => {
     const [singeemloyee  , setsingeemloyee] = useState("");
     const { id } = useParams();
     const fetchSingleCustomer = async() => {
-        const response = await axios.get(`http://localhost:8000/geteditemployee/${id}`);
+        const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/geteditemployee/${id}`);
         console.log("response: ", response);
       console.log(singeemloyee);
       setsingeemloyee(response.data.Product);
@@ -131,7 +131,7 @@ const Editemployee = () => {
       const getAlldepartments = async () => {
 
         try {
-          const response = await axios.get(`http://localhost:8000/alldepartments`);
+          const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/alldepartments`);
           console.log("response: ", response);
           console.log(alldepartmentss);
           setalldepartmentss(response.data.data);
@@ -143,7 +143,7 @@ const Editemployee = () => {
       const handlesubmit = async () => {
         try {
             const UserData = { ...singeemloyee};
-        const response = await axios.put(`http://localhost:8000/editemployee/${id}`, UserData);
+        const response = await axios.put(`https://hr-forcast-backend-main.vercel.app/editemployee/${id}`, UserData);
         alert("employee Updated");
           } catch (error) {
             console.log("error in editing all employee", error);
@@ -155,7 +155,7 @@ const Editemployee = () => {
 
         const getProfile = async () => {
           try {
-            let response = await axios.get(`http://localhost:8000/api/v1/profile`,
+            let response = await axios.get(`https://hr-forcast-backend-main.vercel.app/api/v1/profile`,
               {
                 withCredentials: true,
                 headers: {

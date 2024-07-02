@@ -16,7 +16,7 @@ function Home() {
   const [allemployeesalerts, setallemployeesalerts] = useState([]);
   const getAllemployeedep = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/employeedepartmentstotal`);
+      const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/employeedepartmentstotal`);
       console.log("response: ", response);
       setallemployees(response.data);
     } catch (error) {
@@ -26,7 +26,7 @@ function Home() {
 
   const employeeducationfieldtotal = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/employeeducationfieldtotal`);
+      const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/employeeducationfieldtotal`);
       console.log("response:2 ", response);
       setalleducationield(response.data);
       console.log("res2", response.data.lstotal);
@@ -36,7 +36,7 @@ function Home() {
   };
   const jobtotafields = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/employeejobroletotal`);
+      const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/employeejobroletotal`);
       console.log("response:2 ", response);
       setjobtotal(response.data);
       console.log("res2", response.data.lstotal);
@@ -46,7 +46,7 @@ function Home() {
   };
   const alerttotal = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/alerttotal`);
+      const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/alerttotal`);
       console.log("response:2 ", response);
       setallemployeesalerts(response.data.data);
       console.log("res2", response.data.lstotal);
@@ -57,7 +57,7 @@ function Home() {
 
   const otherstotalfields = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/employeegendertotal`);
+      const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/employeegendertotal`);
       console.log("response:2 ", response);
       setotherstotal(response.data);
     } catch (error) {

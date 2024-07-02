@@ -16,7 +16,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
         const getProfile = async () => {
           try {
             let response = await axios.get(
-              `http://localhost:8000/api/v1/profile`,
+              `https://hr-forcast-backend-main.vercel.app/api/v1/profile`,
               {
                 withCredentials: true,
                 headers: {
@@ -50,7 +50,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
         // https://glorious-hat-bat.cyclic.app      // old url
         else {
           try {
-            let response = await axios.post(`http://localhost:8000/logouts`, {
+            let response = await axios.post(`https://hr-forcast-backend-main.vercel.app/logouts`, {
               email: customerresponse.email,
               password: customerresponse.password
             }, {

@@ -45,7 +45,7 @@ const EmployeeDetails = () => {
     // get employee details function
       const getAllemployee = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/employeedetails/${id}`);
+          const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/employeedetails/${id}`);
           console.log("response: ", response);
           console.log(allemployees);
           setallemployees(response.data.data);

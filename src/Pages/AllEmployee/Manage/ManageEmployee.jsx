@@ -70,7 +70,7 @@ useEffect(() => {
 
 const fetchSingleCustomer = async () => {
   try {
-      const response = await axios.get(`http://localhost:8000/geteditemployee/${id}`);
+      const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/geteditemployee/${id}`);
       setsingeemloyee(response.data.Product);
   } catch (error) {
       console.log("Error fetching single employee:", error);
@@ -99,7 +99,7 @@ const handleDecrement = (field) => {
     // get all emp
       const getAllemployee = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/employeedetails/${id}`);
+          const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/employeedetails/${id}`);
           console.log("response: ", response);
           console.log(allemployees);
           setallemployees(response.data.data);
@@ -112,7 +112,7 @@ const handleDecrement = (field) => {
       const handlesubmit = async (id) => {
         try {
             const UserData = { ...singeemloyee};
-        const response = await axios.put(`http://localhost:8000/editemployee/${id}`, UserData);
+        const response = await axios.put(`https://hr-forcast-backend-main.vercel.app/editemployee/${id}`, UserData);
         setOpenSnackbar(true);
           } catch (error) {
             console.log("error in editing all employee", error);

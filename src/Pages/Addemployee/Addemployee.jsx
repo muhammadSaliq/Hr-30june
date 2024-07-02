@@ -113,7 +113,7 @@ const [resultattr , setresultattr] = useState(false);
       const getAlldepartments = async () => {
 
         try {
-          const response = await axios.get('http://localhost:8000/alldepartments');
+          const response = await axios.get('https://hr-forcast-backend-main.vercel.app/alldepartments');
           console.log("response: ", response);
           console.log(alldepartmentss);
           setalldepartmentss(response.data.data);
@@ -134,7 +134,7 @@ if (emloyeename && age && businessTravel && dailyRate && department && distanceF
     ) {
 
           try {
-            const response = await axios.post('http://localhost:8000/addemployee', {
+            const response = await axios.post('https://hr-forcast-backend-main.vercel.app/addemployee', {
                 emloyeename,
                 Age: age,
                 BusinessTravel: businessTravel,
@@ -592,7 +592,7 @@ return;
 
         const getProfile = async () => {
           try {
-            let response = await axios.get('http://localhost:8000/api/v1/profile',
+            let response = await axios.get('https://hr-forcast-backend-main.vercel.app/api/v1/profile',
               {
                 withCredentials: true,
                 headers: {

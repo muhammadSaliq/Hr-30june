@@ -119,7 +119,7 @@ let datetime = currDate + ' ' + currTime;
 
   //single emloyee data
   const fetchSingleCustomer = async(id) => {
-      const response = await axios.get(`http://localhost:8000/geteditemployee/${id}`);
+      const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/geteditemployee/${id}`);
       console.log("response: ", response);
     console.log(singeemloyee);
     setsingeemloyee(response.data.Product);
@@ -141,7 +141,7 @@ let datetime = currDate + ' ' + currTime;
   const handlesubmit = async (id) => {
     try {
         const UserData = { ...singeemloyee};
-    const response = await axios.put(`http://localhost:8000/editemployee/${id}`, UserData);
+    const response = await axios.put(`https://hr-forcast-backend-main.vercel.app/editemployee/${id}`, UserData);
     seteditboolean(true)
     setOpenDialog(false);
     alert("employee Updated");
@@ -193,7 +193,7 @@ const handleMouseLeaveManage = (id) => {
 const getAlldepartments = async () => {
 
   try {
-    const response = await axios.get(`http://localhost:8000/alldepartments`);
+    const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/alldepartments`);
     console.log("response: ", response);
     console.log(alldepartmentss);
     setalldepartmentss(response.data.data);
@@ -209,7 +209,7 @@ const getAlldepartments = async () => {
   // get all employee from DB w.r.t dep
 const getAllemployee = async () => {
   try {
-    const response = await axios.get(`http://localhost:8000/deaprtmentemployee/${department}`);
+    const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/deaprtmentemployee/${department}`);
     console.log("response: ", response);
     console.log(allemployees);
     setallemployees(response.data.data);
@@ -220,7 +220,7 @@ const getAllemployee = async () => {
 //delete employee
     const deleteData = async (id)=>{
       try {
-        const response = await axios.get(`http://localhost:8000/deleteemployee/${id}`)
+        const response = await axios.get(`https://hr-forcast-backend-main.vercel.app/deleteemployee/${id}`)
         console.log("response: ", response.data);
         setemployeeBoolean(true);
       } catch (error) {
@@ -258,7 +258,7 @@ useEffect(() => {
 
 const getProfile = async () => {
   try {
-    let response = await axios.get(`http://localhost:8000/api/v1/profile`,
+    let response = await axios.get(`https://hr-forcast-backend-main.vercel.app/api/v1/profile`,
       {
         withCredentials: true,
         headers: {

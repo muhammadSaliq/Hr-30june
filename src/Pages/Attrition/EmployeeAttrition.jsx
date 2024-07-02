@@ -99,7 +99,7 @@ const Employeeattrition = () => {
     
 //single employee
     const fetchSingleCustomer = async(id) => {
-        const response = await axios.get('http://localhost:8000/geteditemployee/${id}');
+        const response = await axios.get('https://hr-forcast-backend-main.vercel.app/geteditemployee/${id}');
         console.log("response: ", response);
       console.log(singeemloyee);
       setsingeemloyee(response.data.Product);
@@ -122,7 +122,7 @@ const Employeeattrition = () => {
   const getAlldepartments = async () => {
 
     try {
-      const response = await axios.get('http://localhost:8000/alldepartments');
+      const response = await axios.get('https://hr-forcast-backend-main.vercel.app/alldepartments');
       console.log("response: ", response);
       console.log(alldepartmentss);
       setalldepartmentss(response.data.data);
@@ -208,7 +208,7 @@ const Employeeattrition = () => {
     // all employee data
       const getAllemployee = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/allemployees');
+          const response = await axios.get('https://hr-forcast-backend-main.vercel.app/allemployees');
           console.log("response: ", response);
           console.log(allemployees);
           setallemployees(response.data.data);

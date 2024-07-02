@@ -49,7 +49,7 @@ let DeployURL = "https://glorious-hat-bat.cyclic.app"
       {
         setLoading(true);
       try {
-        let response = await axios.post(`http://localhost:8000/login`, {
+        let response = await axios.post(`https://hr-forcast-backend-main.vercel.app/login`, {
           email: email,
           password: password
         }, {
@@ -103,7 +103,7 @@ let DeployURL = "https://glorious-hat-bat.cyclic.app"
       setLoading(true);
 
       try {
-        const response = await axios.post('http://localhost:8000/signup', {
+        const response = await axios.post('https://hr-forcast-backend-main.vercel.app/signup', {
           username,
           email,
           password,
